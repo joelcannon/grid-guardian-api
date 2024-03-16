@@ -57,3 +57,42 @@ module.exports = (mongoose) => {
   const User = mongoose.model('User', UserSchema)
   return User
 }
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     User:
+ *       type: object
+ *       required:
+ *         - username
+ *         - email
+ *         - password
+ *         - phone
+ *       properties:
+ *         username:
+ *           type: string
+ *           description: The user's username
+ *         email:
+ *           type: string
+ *           description: The user's email
+ *         password:
+ *           type: string
+ *           description: The user's password
+ *         phone:
+ *           type: string
+ *           description: The user's phone number
+ *         firstName:
+ *           type: string
+ *           description: The user's first name
+ *         lastName:
+ *           type: string
+ *           description: The user's last name
+ *         role:
+ *           type: string
+ *           enum: ['admin', 'tech', 'viewer']
+ *           description: The user's role
+ *         organization:
+ *           type: string
+ *           description: The ID of the user's organization
+ */

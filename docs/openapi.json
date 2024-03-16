@@ -16,25 +16,12 @@
     }
   ],
   "paths": {
-    "/users/": {
+    "/api-docs": {
       "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      },
-      "post": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      },
-      "delete": {
-        "description": "",
+        "tags": [
+          "OpenAPI"
+        ],
+        "description": "get OpenAPI 3.0 docs",
         "responses": {
           "default": {
             "description": ""
@@ -42,9 +29,51 @@
         }
       }
     },
+    "/users/": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "description": "get all Users",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "description": "Add a new user",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "requestBody": {}
+      },
+      "delete": {
+        "tags": [
+          "users"
+        ],
+        "description": "delete all Users",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/users/{id}": {
       "get": {
-        "description": "",
+        "tags": [
+          "users"
+        ],
+        "description": "get a single User by id",
         "parameters": [
           {
             "name": "id",
@@ -56,13 +85,19 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       },
       "put": {
-        "description": "",
+        "tags": [
+          "users"
+        ],
+        "description": "update a User by id",
         "parameters": [
           {
             "name": "id",
@@ -74,13 +109,22 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "users"
+        ],
+        "description": "delete a single User by id",
         "parameters": [
           {
             "name": "id",
@@ -92,8 +136,11 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }

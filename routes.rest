@@ -7,7 +7,7 @@ GET http://localhost:8080/users
 GET http://localhost:8080/users
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 ###
-GET http://localhost:8080/users/4
+GET http://localhost:8080/users/65f5fed562a9815915f1bdbd
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 ###
 POST http://localhost:8080/users
@@ -22,22 +22,22 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
    "firstName": "Joel",
    "lastName": "Cannon",
    "phone": "+15412440897",
-   "role": "admin"
+   "role": "tech"
 }
 ###
-DELETE http://localhost:8080/users/65ebc391e2bd8f7a8a65dd14
+DELETE http://localhost:8080/users/
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 ###
-PUT http://localhost:8080/users/61a921f6028954d4f0319e6d
+PUT http://localhost:8080/users/65f6139c62a9815915f1bdc9
 Content-Type: application/json
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
 {
-  "_id": "61a921f6028954d4f0319e6d",
-  "temple_id": "1",
-  "name": "Aba Nigeria Temple",
-  "description": "This is a sample description",
-  "additionalInfo": true ,
-  "dedicated": "7 August 99999",
-  "location": "Aba, Abia, Nigeria"
+ 
+   "username": "joelwcannon",
+   "firstName": "Joel",
+   "lastName": "Cannon",
+   "phone": "+15412440897",
+   "role": "admin"
+
 }

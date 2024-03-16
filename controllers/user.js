@@ -16,6 +16,19 @@ const validateApiKey = (req, res, next) => {
 exports.createUser = [
   validateApiKey,
   (req, res, next) => {
+    // #swagger.requestBody = {
+    //   required: true,
+    //   content: {
+    //     "application/json": {
+    //       schema: {
+    //         $ref: '#/components/schemas/User'
+    //       }
+    //     }
+    //   }
+    // }
+    // #swagger.responses[200] = { description: 'Success' }
+    // #swagger.responses[400] = { description: 'Bad request: Content can not be empty!' }
+    // #swagger.responses[500] = { description: 'Internal server error' }
     if (!req.body.username) {
       return res.status(400).json({ message: 'Content can not be empty!' })
     }
@@ -40,33 +53,24 @@ exports.createUser = [
   },
 ]
 
-// exports.getAllUsers = [
-//   validateApiKey,
-//   (req, res, next) => {
-//     User.find(
-//       {},
-//       {
-//         name: 1,
-//         location: 1,
-//         dedicated: 1,
-//         additionalInfo: 1,
-//         _id: 0,
-//       }
-//     )
-//       .then((data) => {
-//         res.json(data);
-//       })
-//       .catch(next);
-//   },
-// ];
+exports.getAllUsers = [
+  validateApiKey,
+  (req, res, next) => {
+    User.find()
+      .then((data) => {
+        res.json(data)
+      })
+      .catch(next)
+  },
+]
 
-exports.getAllUsers = (req, res, next) => {
-  User.find()
-    .then((data) => {
-      res.json(data)
-    })
-    .catch(next)
-}
+// exports.getAllUsers = (req, res, next) => {
+//   User.find()
+//     .then((data) => {
+//       res.json(data)
+//     })
+//     .catch(next)
+// }
 
 exports.getUserById = [
   validateApiKey,
