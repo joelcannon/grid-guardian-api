@@ -1,15 +1,11 @@
-const routes = require('express').Router()
+const express = require('express')
+const router = express.Router()
 const userRoutes = require('./user.js')
+const swaggerUi = require('swagger-ui-express')
+const swaggerDocument = require('../swagger-output.json')
 
-routes.use('/users', userRoutes)
-routes.use(
-  '/',
-  (docData = (req, res) => {
-    let docData = {
-      documentationURL: '', // * todo: add documentation URL
-    }
-    res.send(docData)
-  }),
-)
+router.use('/users', userRoutes)
+router.use('/api-docs', swaggerUi.serve)
+router.get('/api-docs', swaggerUi.setup(swaggerDocument))
 
-module.exports = routes
+module.exports = router
