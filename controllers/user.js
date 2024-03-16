@@ -16,7 +16,7 @@ const validateApiKey = (req, res, next) => {
 exports.createUser = [
   validateApiKey,
   (req, res, next) => {
-    if (!req.body.name) {
+    if (!req.body.username) {
       return res.status(400).json({ message: 'Content can not be empty!' })
     }
 
@@ -27,6 +27,7 @@ exports.createUser = [
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       role: req.body.role,
+      phone: req.body.phone,
       organization: req.body.organization,
     })
 

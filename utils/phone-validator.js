@@ -12,3 +12,5 @@ async function isPhoneNumberValid(phoneNumber) {
     return false
   }
 }
+
+module.exports = isPhoneNumberValid

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const isPhoneNumberValid = require('../util/phoneValidation')
+const isPhoneNumberValid = require('../utils/phone-validator')
 
 module.exports = (mongoose) => {
   const UserSchema = mongoose.Schema(

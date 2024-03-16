@@ -14,15 +14,15 @@ POST http://localhost:8080/users
 Content-Type: application/json
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
-{
 
+{
    "username": "joelcannon",
    "email": "joelcannon@mac.com",
    "password": "password",
    "firstName": "Joel",
    "lastName": "Cannon",
+   "phone": "+15412440897",
    "role": "admin"
-
 }
 ###
 DELETE http://localhost:8080/users/65ebc391e2bd8f7a8a65dd14
