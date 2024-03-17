@@ -1,9 +1,5 @@
 // LOCALHOST
 ###
-GET http://localhost:8080/users
-
-// LOCALHOST
-###
 GET http://localhost:8080/users/
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 ###
@@ -13,7 +9,6 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 POST http://localhost:8080/users
 Content-Type: application/json
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
-
 
 {
    "username": "joel",
@@ -29,7 +24,6 @@ POST http://localhost:8080/users
 Content-Type: application/json
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
-
 {
    "username": "joelcannon",
    "email": "joelcannon@gmail.com",
@@ -44,6 +38,60 @@ DELETE http://localhost:8080/users/65f686bb683dbbdb77013770
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 ###
 PUT http://localhost:8080/users/65f686bb683dbbdb77013770
+Content-Type: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+{
+ 
+   "username": "joelC",
+   "firstName": "Joel",
+   "lastName": "Cannon",
+   "phone": "+154124408",
+   "role": "viewer"
+
+}
+
+
+// RENDER.COM
+###
+GET https://grid-guardian-api.onrender.com/users/
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+###
+GET https://grid-guardian-api.onrender.com/users/65f68a1a683dbbdb7701378f
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+###
+POST https://grid-guardian-api.onrender.com/users
+Content-Type: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+{
+   "username": "joel",
+   "email": "joelcannon@mac.co",
+   "password": "Abcxyz12!",
+   "firstName": "Joel",
+   "lastName": "Cannon",
+   "phone": "+15412440897",
+   "role": "admin"
+}
+###
+POST https://grid-guardian-api.onrender.com/users
+Content-Type: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+{
+   "username": "joelcannon",
+   "email": "joelcannon@gmail.com",
+   "password": "ABCxyz12!",
+   "firstName": "Joel",
+   "lastName": "Cannon",
+   "phone": "+15412440896",
+   "role": "tech"
+}
+###
+DELETE https://grid-guardian-api.onrender.com/users/65f68a1a683dbbdb7701378f
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+###
+PUT https://grid-guardian-api.onrender.com/users/65f68a1a683dbbdb7701378f
 Content-Type: application/json
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
