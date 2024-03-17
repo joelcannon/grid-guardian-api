@@ -58,7 +58,7 @@
         "summary": "delete all Users",
         "description": "",
         "responses": {
-          "200": {
+          "204": {
             "description": "Success: Users were deleted successfully!"
           },
           "500": {
@@ -115,7 +115,7 @@
           }
         ],
         "responses": {
-          "200": {
+          "204": {
             "description": "Success: User was updated successfully."
           },
           "400": {
@@ -148,7 +148,7 @@
           }
         ],
         "responses": {
-          "200": {
+          "204": {
             "description": "Success: User was deleted successfully!"
           },
           "404": {

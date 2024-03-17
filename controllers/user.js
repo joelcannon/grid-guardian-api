@@ -99,7 +99,7 @@ exports.updateUserById = [
     //     }
     //   }
     // }
-    // #swagger.responses[200] = { description: 'Success: User was updated successfully.' }
+    // #swagger.responses[204] = { description: 'Success: User was updated successfully.' }
     // #swagger.responses[400] = { description: 'Bad request: Data to update can not be empty!' }
     // #swagger.responses[404] = { description: 'Not found: Cannot update User with id. Maybe User was not found!' }
     // #swagger.responses[500] = { description: 'Internal server error' }
@@ -121,7 +121,7 @@ exports.updateUserById = [
           message: `Cannot update User with id=${id}. Maybe User was not found!`,
         })
       } else {
-        res.json({ message: 'User was updated successfully.' })
+        res.status(204).json({ message: 'User was updated successfully.' })
       }
     } catch (err) {
       next(err)
@@ -133,7 +133,7 @@ exports.deleteUserById = [
   validateApiKey,
   async (req, res, next) => {
     // #swagger.parameters['id'] = { description: 'User ID' }
-    // #swagger.responses[200] = { description: 'Success: User was deleted successfully!' }
+    // #swagger.responses[204] = { description: 'Success: User was deleted successfully!' }
     // #swagger.responses[404] = { description: 'Not found: Cannot delete User with id. Maybe User was not found!' }
     // #swagger.responses[500] = { description: 'Internal server error' }
     const id = req.params.id
@@ -146,7 +146,7 @@ exports.deleteUserById = [
           message: `Cannot delete User with id=${id}. Maybe User was not found!`,
         })
       } else {
-        res.json({ message: 'User was deleted successfully!' })
+        res.status(204).json({ message: 'User was deleted successfully!' })
       }
     } catch (err) {
       next(err)
@@ -157,11 +157,11 @@ exports.deleteUserById = [
 exports.deleteAllUsers = [
   validateApiKey,
   async (req, res, next) => {
-    // #swagger.responses[200] = { description: 'Success: Users were deleted successfully!' }
+    // #swagger.responses[204] = { description: 'Success: Users were deleted successfully!' }
     // #swagger.responses[500] = { description: 'Internal server error' }
     try {
       const data = await User.deleteMany({})
-      res.json({
+      res.status(204).json({
         message: `${data.deletedCount} Users were deleted successfully!`,
       })
     } catch (err) {
