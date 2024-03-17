@@ -1,0 +1,14 @@
+{
+   "name": "My Organization",
+   "apiKey": "1234567890abcdef",
+   "isActive": true,
+   "members": [
+      "60d5ecb8b392d78866f8cd3d",
+      "60d5ecb8b392d78866f8cd3e"
+   ],
+   "owner": "60d5ecb8b392d78866f8cd3f",
+   "address": "123 Main St, Anytown, USA",
+   "website": "https://www.my-organization.com",
+   "phone": "123-456-7890",
+   "description": "This is a description of my organization."
+}

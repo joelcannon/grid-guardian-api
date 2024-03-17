@@ -7,7 +7,7 @@ GET http://localhost:8080/users
 GET http://localhost:8080/users
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 ###
-GET http://localhost:8080/users/65f5fed562a9815915f1bdbd
+GET http://localhost:8080/users/
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 ###
 POST http://localhost:8080/users
@@ -16,28 +16,43 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 
 
 {
-   "username": "joelcannon",
+   "username": "joelca",
    "email": "joelcannon@mac.com",
-   "password": "password",
+   "password": "Abcxyz12!",
    "firstName": "Joel",
    "lastName": "Cannon",
    "phone": "+15412440897",
+   "role": "Admin"
+}
+###
+POST http://localhost:8080/users
+Content-Type: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+
+{
+   "username": "joelcannon",
+   "email": "joelcannon@gmail.com",
+   "password": "ABCxyz12!",
+   "firstName": "Joel",
+   "lastName": "Cannon",
+   "phone": "+15412440896",
    "role": "tech"
 }
 ###
 DELETE http://localhost:8080/users/
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 ###
-PUT http://localhost:8080/users/65f6139c62a9815915f1bdc9
+PUT http://localhost:8080/users/65f65cac97161ef2f5eeae0e
 Content-Type: application/json
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
 {
  
-   "username": "joelwcannon",
+   "username": "joelC",
    "firstName": "Joel",
    "lastName": "Cannon",
-   "phone": "+15412440897",
-   "role": "admin"
+   "phone": "+15412440890",
+   "role": "viewer"
 
 }

@@ -1,12 +1,14 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
+const { errorHandler } = require('./middlewares/error-handler')
 
 app
   .use(cors())
   .use(express.json())
   .use(express.urlencoded({ extended: true }))
   .use('/', require('./routes'))
+  .use(errorHandler)
 
 const db = require('./models')
 db.mongoose

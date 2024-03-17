@@ -21,6 +21,21 @@ const doc = {
       description: 'Render URL',
     },
   ],
+  components: {
+    securitySchemes: {
+      ApiKeyAuth: {
+        // name the security scheme
+        type: 'apiKey',
+        in: 'header', // API key is passed in the header
+        name: 'apiKey', // name of the header, parameter or cookie
+      },
+    },
+  },
+  security: [
+    {
+      ApiKeyAuth: [],
+    },
+  ],
 }
 
 const outputFile = './docs/openapi.json'

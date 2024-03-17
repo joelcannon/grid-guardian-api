@@ -1,61 +1,103 @@
 const mongoose = require('mongoose')
 const isPhoneNumberValid = require('../utils/phone-validator')
+const Joi = require('joi')
 
-module.exports = (mongoose) => {
-  const UserSchema = mongoose.Schema(
-    {
-      username: {
-        type: String,
-        required: true,
-        unique: true,
-      },
-      email: {
-        type: String,
-        required: true,
-        unique: true,
-      },
-      password: {
-        type: String,
-        required: true,
-      },
-      phone: {
-        type: String,
-        validate: {
-          validator: function (v) {
-            return /^\+[1-9]\d{1,14}$/.test(v)
-          },
-          message: (props) => `${props.value} is not a valid phone number!`,
+const UserSchema = mongoose.Schema(
+  {
+    username: {
+      type: String,
+      required: true,
+      unique: true,
+      validate: {
+        validator: function (v) {
+          return /^[^\s]{3,}$/.test(v)
         },
-        required: [true, 'User phone number required'],
-        unique: true,
-      },
-      firstName: String,
-      lastName: String,
-      role: {
-        type: String,
-        enum: ['admin', 'tech', 'viewer'],
-        default: 'viewer',
-      },
-      organization: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Organization',
+        message:
+          'Username must be at least 3 characters long and contain no spaces.',
       },
     },
-    {
-      timestamps: true, // This will automatically add createdAt and updatedAt fields
-      collection: 'users', // explicitly set the collection name
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      validate: {
+        validator: function (v) {
+          return /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(v)
+        },
+        message: 'Email is not valid.',
+      },
     },
-  )
+    password: {
+      type: String,
+      required: true,
+      validate: {
+        validator: function (v) {
+          return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
+            v,
+          )
+        },
+        message:
+          'Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one numeral and one special character.',
+      },
+    },
+    phone: {
+      type: String,
+      validate: {
+        validator: function (v) {
+          return /^\+[1-9]\d{1,14}$/.test(v)
+        },
+        message: (props) => `${props.value} is not a valid phone number!`,
+      },
+      required: [true, 'User phone number required'],
+      unique: true,
+    },
+    firstName: String,
+    lastName: String,
+    role: {
+      type: String,
+      enum: ['admin', 'tech', 'viewer'],
+      default: 'viewer',
+    },
+    organization: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Organization',
+    },
+  },
+  {
+    timestamps: true, // This will automatically add createdAt and updatedAt fields
+    collection: 'users', // explicitly set the collection name
+  },
+)
 
-  UserSchema.pre('save', async function (next) {
-    if (!(await isPhoneNumberValid(this.phone))) {
-      throw new Error('Phone number is not valid SMS-capable number!')
-    }
-    next()
-  })
+UserSchema.pre('save', async function (next) {
+  if (!(await isPhoneNumberValid(this.phone))) {
+    throw new Error('Phone number is not valid SMS-capable number!')
+  }
+  next()
+})
 
-  const User = mongoose.model('User', UserSchema)
-  return User
+const User = mongoose.model('User', UserSchema)
+
+const userJoiSchema = Joi.object({
+  username: Joi.string().pattern(new RegExp('^[^s]{3,}$')).required(),
+  email: Joi.string().email().required(),
+  password: Joi.string()
+    .pattern(
+      new RegExp(
+        '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&])[A-Za-z0-9@$!%*?&]{8,}$',
+      ),
+    )
+    .required(),
+  phone: Joi.string().pattern(new RegExp('^\\+[1-9]\\d{1,14}$')).required(),
+  firstName: Joi.string(),
+  lastName: Joi.string(),
+  role: Joi.string().valid('admin', 'tech', 'viewer').default('viewer'),
+  organization: Joi.string(), // assuming organization id is a string
+})
+
+module.exports = {
+  User,
+  userJoiSchema,
 }
 
 /**
@@ -72,16 +114,22 @@ module.exports = (mongoose) => {
  *       properties:
  *         username:
  *           type: string
- *           description: The user's username
+ *           description: The user's username. Must be at least 3 characters long and contain no spaces.
+ *           minLength: 3
+ *           pattern: '^[^\s]{3,}$'
  *         email:
  *           type: string
- *           description: The user's email
+ *           description: The user's email. Must be a valid email format.
+ *           format: email
  *         password:
  *           type: string
- *           description: The user's password
+ *           description: The user's password. Must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one numeral and one special character.
+ *           minLength: 8
+ *           pattern: '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'
  *         phone:
  *           type: string
- *           description: The user's phone number
+ *           description: The user's phone number. Must be a valid phone number.
+ *           pattern: '^\+[1-9]\d{1,14}$'
  *         firstName:
  *           type: string
  *           description: The user's first name

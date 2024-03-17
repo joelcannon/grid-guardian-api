@@ -1,7 +1,6 @@
 const twilio = require('twilio')
 const { accountSid, authToken } = require('../config/twilio.config')
 const client = twilio(accountSid, authToken)
-console.log('client: ', client)
 async function isPhoneNumberValid(phoneNumber) {
   try {
     const data = await client.lookups
