@@ -2,6 +2,14 @@ const mongoose = require('mongoose')
 const isPhoneNumberValid = require('../utils/phone-validator')
 const Joi = require('joi')
 
+const Roles = {
+  VIEWER: 'Viewer',
+  OPERATOR: 'Operator',
+  MANAGER: 'Manager',
+  ADMIN: 'Admin',
+  SUPER_ADMIN: 'Super Admin',
+}
+
 const UserSchema = mongoose.Schema(
   {
     username: {
@@ -55,8 +63,8 @@ const UserSchema = mongoose.Schema(
     lastName: String,
     role: {
       type: String,
-      enum: ['admin', 'tech', 'viewer'],
-      default: 'viewer',
+      enum: Object.values(Roles),
+      default: Roles.VIEWER,
     },
     organization: {
       type: mongoose.Schema.Types.ObjectId,
@@ -64,8 +72,8 @@ const UserSchema = mongoose.Schema(
     },
   },
   {
-    timestamps: true, // This will automatically add createdAt and updatedAt fields
-    collection: 'users', // explicitly set the collection name
+    timestamps: true,
+    collection: 'users',
   },
 )
 
@@ -91,11 +99,14 @@ const userJoiSchema = Joi.object({
   phone: Joi.string().pattern(new RegExp('^\\+[1-9]\\d{1,14}$')).required(),
   firstName: Joi.string(),
   lastName: Joi.string(),
-  role: Joi.string().valid('admin', 'tech', 'viewer').default('viewer'),
+  role: Joi.string()
+    .valid(...Object.values(Roles))
+    .default(Roles.VIEWER),
   organization: Joi.string(), // assuming organization id is a string
 })
 
 module.exports = {
+  Roles,
   User,
   userJoiSchema,
 }
@@ -138,7 +149,7 @@ module.exports = {
  *           description: The user's last name
  *         role:
  *           type: string
- *           enum: ['admin', 'tech', 'viewer']
+ *           enum: ['Viewer', 'Operator', 'Manager', 'Admin', 'Super Admin']
  *           description: The user's role
  *         organization:
  *           type: string

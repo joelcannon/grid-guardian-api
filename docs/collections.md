@@ -182,7 +182,7 @@ const SensorUnits = {
 }
 ```
 
-# Thresholds
+# Threshold
 
 - **\_id:** Unique identifier for the threshold document.
 - **sensorId:** Identifier for the sensor within the device.

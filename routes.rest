@@ -17,7 +17,7 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
    "firstName": "Joel",
    "lastName": "Cannon",
    "phone": "+15412440897",
-   "role": "admin"
+   "role": "Super Admin"
 }
 ###
 POST http://localhost:8080/users
@@ -31,7 +31,7 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
    "firstName": "Joel",
    "lastName": "Cannon",
    "phone": "+15412440896",
-   "role": "tech"
+   "role": "Operator"
 }
 ###
 DELETE http://localhost:8080/users/65f686bb683dbbdb77013770
@@ -47,7 +47,7 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
    "firstName": "Joel",
    "lastName": "Cannon",
    "phone": "+154124408",
-   "role": "viewer"
+   "role": "Viewer"
 
 }
 
@@ -71,7 +71,7 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
    "firstName": "Joel",
    "lastName": "Cannon",
    "phone": "+15412440897",
-   "role": "admin"
+   "role": "Super Admin"
 }
 ###
 POST https://grid-guardian-api.onrender.com/users
@@ -85,7 +85,7 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
    "firstName": "Joel",
    "lastName": "Cannon",
    "phone": "+15412440896",
-   "role": "tech"
+   "role": "Operator"
 }
 ###
 DELETE https://grid-guardian-api.onrender.com/users/65f68a1a683dbbdb7701378f
@@ -101,6 +101,6 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
    "firstName": "Joel",
    "lastName": "Cannon",
    "phone": "+154124408",
-   "role": "viewer"
+   "role": "Viewer"
 
 }

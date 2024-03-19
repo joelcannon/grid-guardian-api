@@ -36,7 +36,7 @@ userRouter.post(
   //       password: { type: 'string', example: 'password' },
   //       firstName: { type: 'string', example: 'Joel' },
   //       lastName: { type: 'string', example: 'Cannon' },
-  //       role: { type: 'string', example: 'admin' },
+  //       role: { type: 'string', example: 'Admin' },
   //       phone: { type: 'string', example: '+15412440897' }
   //     }
   //   }
