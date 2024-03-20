@@ -34,7 +34,7 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
    "role": "Operator"
 }
 ###
-DELETE http://localhost:8080/users/65f686bb683dbbdb77013770
+DELETE http://localhost:8080/users/
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 ###
 PUT http://localhost:8080/users/65f686bb683dbbdb77013770
@@ -50,6 +50,11 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
    "role": "Viewer"
 
 }
+
+###
+PATCH http://localhost:8080/users/65fa4317942aa0637e1f34b3/toggleActiveStatus
+Content-Type: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
 
 // RENDER.COM
@@ -104,3 +109,8 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
    "role": "Viewer"
 
 }
+
+###
+PATCH https://grid-guardian-api.onrender.com/users/65f68a1a683dbbdb7701378f/toggleActiveStatus
+Content-Type: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N

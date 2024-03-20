@@ -66,6 +66,10 @@ const UserSchema = mongoose.Schema(
       enum: Object.values(Roles),
       default: Roles.VIEWER,
     },
+    isActive: {
+      type: Boolean,
+      default: true, // Set to true by default
+    },
     organization: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Organization',
@@ -102,6 +106,7 @@ const userJoiSchema = Joi.object({
   role: Joi.string()
     .valid(...Object.values(Roles))
     .default(Roles.VIEWER),
+  isActive: Joi.boolean().default(true),
   organization: Joi.string(), // assuming organization id is a string
 })
 
@@ -151,6 +156,10 @@ module.exports = {
  *           type: string
  *           enum: ['Viewer', 'Operator', 'Manager', 'Admin', 'Super Admin']
  *           description: The user's role
+ *         isActive:
+ *           type: boolean
+ *           default: true
+ *           description: The active status of the user
  *         organization:
  *           type: string
  *           description: The ID of the user's organization

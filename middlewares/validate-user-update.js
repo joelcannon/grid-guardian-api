@@ -10,6 +10,7 @@ const userUpdateJoiSchema = Joi.object({
   firstName: userJoiSchema.extract('firstName').optional(),
   lastName: userJoiSchema.extract('lastName').optional(),
   role: userJoiSchema.extract('role').optional(),
+  isActive: userJoiSchema.extract('isActive').optional(),
   organization: userJoiSchema.extract('organization').optional(),
 })
 

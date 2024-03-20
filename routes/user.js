@@ -87,6 +87,13 @@ userRouter.delete(
   userController.deleteAllUsers,
 )
 
+userRouter.patch(
+  '/:id/toggleActiveStatus',
+  // #swagger.summary = 'toggle a User active status by id'
+  // #swagger.tags = ['users']
+  userController.toggleUserActiveStatus,
+)
+
 // userRouter.use(userController.errorHandler)
 
 module.exports = userRouter
