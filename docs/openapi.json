@@ -115,17 +115,14 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "Success: User was updated successfully."
+          "200": {
+            "description": "OK"
           },
           "400": {
-            "description": "Bad request: Data to update can not be empty!"
+            "description": "Bad Request"
           },
           "404": {
-            "description": "Not found: Cannot update User with id. Maybe User was not found!"
-          },
-          "500": {
-            "description": "Internal server error"
+            "description": "Not Found"
           }
         },
         "requestBody": {}
@@ -156,6 +153,37 @@
           },
           "500": {
             "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/users/{id}/toggleActiveStatus": {
+      "patch": {
+        "tags": [
+          "users"
+        ],
+        "summary": "toggle a User active status by id",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "User ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
