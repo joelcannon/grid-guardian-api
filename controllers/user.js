@@ -1,5 +1,6 @@
 require('dotenv').config()
 const { User } = require('../models/user')
+const { findUserById, createUser } = require('../services/user')
 const validateApiKey = require('../middlewares/validate-api-key')
 const validateUser = require('../middlewares/validate-user')
 const validateUserUpdate = require('../middlewares/validate-user-update')
@@ -30,17 +31,17 @@ exports.createUser = [
     const user = new User({
       username: req.body.username,
       email: req.body.email,
-      password: req.body.password,
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
+      // password: req.body.password,
+      // firstName: req.body.firstName,
+      // lastName: req.body.lastName,
       role: req.body.role,
-      phone: req.body.phone,
+      // phone: req.body.phone,
       isActive: req.body.isActive,
       organization: req.body.organization,
     })
 
     try {
-      const data = await user.save(user)
+      const data = await createUser(userData)
       res.json(data)
     } catch (err) {
       next(err)
@@ -72,7 +73,7 @@ exports.getUserById = [
     const id = req.params.id
 
     try {
-      const data = await User.findOne({ _id: id })
+      const data = await findUserById(id)
 
       if (!data) {
         return res.status(404).json({ message: 'Not found User with id ' + id })

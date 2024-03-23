@@ -1,9 +1,13 @@
 // LOCALHOST
 ###
+GET http://localhost:8080/login/
+###
+GET http://localhost:8080/logout/
+###
 GET http://localhost:8080/users/
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 ###
-GET http://localhost:8080/users/65f686bb683dbbdb77013770
+GET http://localhost:8080/users/65fa431d942aa0637e1f34b5
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 ###
 POST http://localhost:8080/users
@@ -13,11 +17,11 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 {
    "username": "joel",
    "email": "joelcannon@mac.co",
-   "password": "Abcxyz12!",
-   "firstName": "Joel",
-   "lastName": "Cannon",
-   "phone": "+15412440897",
-   "role": "Super Admin"
+   # "password": "Abcxyz12!",
+   # "firstName": "Joel",
+   # "lastName": "Cannon",
+   # "phone": "+15412440897",
+   "role": "Admin"
 }
 ###
 POST http://localhost:8080/users
@@ -27,10 +31,10 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 {
    "username": "joelcannon",
    "email": "joelcannon@gmail.com",
-   "password": "ABCxyz12!",
-   "firstName": "Joel",
-   "lastName": "Cannon",
-   "phone": "+15412440896",
+   # "password": "ABCxyz12!",
+   # "firstName": "Joel",
+   # "lastName": "Cannon",
+   # "phone": "+15412440896",
    "role": "Operator"
 }
 ###
@@ -44,9 +48,9 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 {
  
    "username": "joelC",
-   "firstName": "Joel",
-   "lastName": "Cannon",
-   "phone": "+154124408",
+   # "firstName": "Joel",
+   # "lastName": "Cannon",
+   # "phone": "+154124408",
    "role": "Viewer"
 
 }
@@ -72,10 +76,10 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 {
    "username": "joel",
    "email": "joelcannon@mac.co",
-   "password": "Abcxyz12!",
-   "firstName": "Joel",
-   "lastName": "Cannon",
-   "phone": "+15412440897",
+   # "password": "Abcxyz12!",
+   # "firstName": "Joel",
+   # "lastName": "Cannon",
+   # "phone": "+15412440897",
    "role": "Super Admin"
 }
 ###
@@ -86,10 +90,10 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 {
    "username": "joelcannon",
    "email": "joelcannon@gmail.com",
-   "password": "ABCxyz12!",
-   "firstName": "Joel",
-   "lastName": "Cannon",
-   "phone": "+15412440896",
+   # "password": "ABCxyz12!",
+   # "firstName": "Joel",
+   # "lastName": "Cannon",
+   # "phone": "+15412440896",
    "role": "Operator"
 }
 ###
@@ -103,9 +107,9 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 {
  
    "username": "joelC",
-   "firstName": "Joel",
-   "lastName": "Cannon",
-   "phone": "+154124408",
+   # "firstName": "Joel",
+   # "lastName": "Cannon",
+   # "phone": "+154124408",
    "role": "Viewer"
 
 }
