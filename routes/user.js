@@ -1,5 +1,6 @@
 const userRouter = require('express').Router()
 const userController = require('../controllers/user.js')
+const { isAuthenticated } = require('../middlewares/isAuthenticated.js')
 
 userRouter.get(
   '/',
@@ -63,6 +64,7 @@ userRouter.post(
   // },
   // #swagger.summary = 'Add a new User',
   // #swagger.tags = ['users'],
+  isAuthenticated,
   userController.createUser,
 )
 
@@ -70,6 +72,7 @@ userRouter.put(
   '/:id',
   // #swagger.summary = 'update a User by id'
   // #swagger.tags = ['users']
+  isAuthenticated,
   userController.updateUserById,
 )
 
@@ -77,6 +80,7 @@ userRouter.delete(
   '/:id',
   // #swagger.summary = 'delete a single User by id'
   // #swagger.tags = ['users']
+  isAuthenticated,
   userController.deleteUserById,
 )
 
@@ -84,6 +88,7 @@ userRouter.delete(
   '/',
   // #swagger.summary = 'delete all Users'
   // #swagger.tags = ['users']
+  isAuthenticated,
   userController.deleteAllUsers,
 )
 
@@ -91,6 +96,7 @@ userRouter.patch(
   '/:id/toggleActiveStatus',
   // #swagger.summary = 'toggle a User active status by id'
   // #swagger.tags = ['users']
+  isAuthenticated,
   userController.toggleUserActiveStatus,
 )
 
