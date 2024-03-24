@@ -199,10 +199,10 @@
           "auth"
         ],
         "summary": "login in using GitHub",
-        "description": "",
+        "description": "the /api/auth/login route should be accessed directly in the browser, not via AJAX.",
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "Redirects to GitHub for authentication"
           }
         }
       }
@@ -215,8 +215,8 @@
         "summary": "logout",
         "description": "",
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "Logs out the user and redirects to the homepage"
           }
         }
       }

@@ -2,7 +2,7 @@ const { User } = require('../models/user')
 
 function findUserById(id) {
   console.log('findUserById', id)
-  console.log('User', User)
+  // console.log('User', User)
   return User.findById(id)
 }
 
