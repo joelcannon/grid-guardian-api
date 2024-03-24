@@ -1,5 +1,7 @@
 // LOCALHOST
 ###
+GET http://localhost:8080/
+###
 GET http://localhost:8080/api/auth/login/
 ###
 GET http://localhost:8080/api/auth/logout/
@@ -17,10 +19,6 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 {
    "username": "joel",
    "email": "joelcannon@mac.co",
-   # "password": "Abcxyz12!",
-   # "firstName": "Joel",
-   # "lastName": "Cannon",
-   # "phone": "+15412440897",
    "role": "Admin"
 }
 ###
@@ -31,12 +29,9 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 {
    "username": "joelcannon",
    "email": "joelcannon@gmail.com",
-   # "password": "ABCxyz12!",
-   # "firstName": "Joel",
-   # "lastName": "Cannon",
-   # "phone": "+15412440896",
    "role": "Operator"
 }
+
 ###
 DELETE http://localhost:8080/api/users/
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
@@ -46,13 +41,8 @@ Content-Type: application/json
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
 {
- 
    "username": "joelC",
-   # "firstName": "Joel",
-   # "lastName": "Cannon",
-   # "phone": "+154124408",
    "role": "Viewer"
-
 }
 
 ###
@@ -80,12 +70,9 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 {
    "username": "joel",
    "email": "joelcannon@mac.co",
-   # "password": "Abcxyz12!",
-   # "firstName": "Joel",
-   # "lastName": "Cannon",
-   # "phone": "+15412440897",
    "role": "Super Admin"
 }
+
 ###
 POST https://grid-guardian-api.onrender.com/api/users
 Content-Type: application/json
@@ -94,10 +81,6 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 {
    "username": "joelcannon",
    "email": "joelcannon@gmail.com",
-   # "password": "ABCxyz12!",
-   # "firstName": "Joel",
-   # "lastName": "Cannon",
-   # "phone": "+15412440896",
    "role": "Operator"
 }
 ###
@@ -109,13 +92,8 @@ Content-Type: application/json
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
 {
- 
    "username": "joelC",
-   # "firstName": "Joel",
-   # "lastName": "Cannon",
-   # "phone": "+154124408",
    "role": "Viewer"
-
 }
 
 ###
