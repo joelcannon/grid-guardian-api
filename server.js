@@ -1,4 +1,7 @@
 const express = require('express')
+const routes = require('./routes')
+const statusRoutes = require('./routes/status.js')
+
 const cors = require('cors')
 const passport = require('passport')
 const GitHubStrategy = require('passport-github2').Strategy
@@ -73,29 +76,9 @@ app
     cors({ methods: ['GET', 'POST', 'DELETE', 'PUT', 'PATCH'], origin: '*' }),
   )
   .use(express.urlencoded({ extended: true }))
-  .use('/', require('./routes'))
-
-app.get('/', (req, res) => {
-  res.send(
-    req.session.user !== undefined
-      ? `Logged In as ${req.session.user.displayname}`
-      : 'Logged Out',
-  )
-})
-
-app.get(
-  '/auth/github/callback',
-  passport.authenticate('github', {
-    failureRedirect: '/api-docs',
-    session: true,
-  }),
-  (req, res) => {
-    req.session.user = req.user
-    res.redirect('/')
-  },
-)
-
-app.use(errorHandler)
+  .use('/', routes)
+  .use('/', statusRoutes)
+  .use(errorHandler)
 
 const db = require('./models')
 db.mongoose

@@ -16,27 +16,7 @@
     }
   ],
   "paths": {
-    "/login": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/logout": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/users/": {
+    "/api/users/": {
       "get": {
         "tags": [
           "users"
@@ -83,7 +63,7 @@
         }
       }
     },
-    "/users/{id}": {
+    "/api/users/{id}": {
       "get": {
         "tags": [
           "users"
@@ -179,7 +159,7 @@
         }
       }
     },
-    "/users/{id}/toggleActiveStatus": {
+    "/api/users/{id}/toggleActiveStatus": {
       "patch": {
         "tags": [
           "users"
@@ -209,6 +189,48 @@
           },
           "404": {
             "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/auth/login": {
+      "get": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "login in using GitHub",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/auth/logout": {
+      "get": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "logout",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "status"
+        ],
+        "summary": "report login status",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
