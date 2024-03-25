@@ -29,12 +29,25 @@ const doc = {
         in: 'header', // API key is passed in the header
         name: 'apiKey', // name of the header, parameter or cookie
       },
+      OAuth2: {
+        type: 'oauth2',
+        flows: {
+          authorizationCode: {
+            authorizationUrl: 'https://github.com/login/oauth/authorize',
+            tokenUrl: 'https://github.com/login/oauth/access_token',
+            scopes: {
+              'read:user': 'Read user data',
+            },
+          },
+        },
+      },
     },
   },
   security: [
     {
       ApiKeyAuth: [],
     },
+    { OAuth2: ['read:user'] },
   ],
 }
 
