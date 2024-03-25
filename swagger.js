@@ -17,7 +17,7 @@ const doc = {
     },
     {
       // This is another option that can be selected to connect through.
-      url: 'https://grid-guardian-api.onrender.com/',
+      url: 'https://cse341-w4-h46g.onrender.com',
       description: 'Render URL',
     },
   ],
