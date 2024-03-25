@@ -4,5 +4,5 @@ dotenv.config()
 module.exports = {
   clientSecret: process.env.GITHUB_CLIENT_SECRET,
   clientID: process.env.GITHUB_CLIENT_ID,
-  callbackURL: process.env.CALLBACK_URL,
+  callbackURL: process.env.GITHUB_CALLBACK_URL,
 }

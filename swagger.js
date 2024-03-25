@@ -13,12 +13,12 @@ const doc = {
     {
       // The first url set will be your default.
       url: 'http://localhost:8080',
-      description: 'localhost:8080',
+      description: 'local dev URL',
     },
     {
       // This is another option that can be selected to connect through.
       url: 'https://cse341-w4-h46g.onrender.com',
-      description: 'Render URL',
+      description: 'production Render URL',
     },
   ],
   components: {
