@@ -78,7 +78,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "User ID"
+            "description": "ID of the user to retrieve"
           }
         ],
         "responses": {

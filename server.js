@@ -1,6 +1,6 @@
 const express = require('express')
 const routes = require('./routes')
-const statusRoutes = require('./routes/status.js')
+const statusRoutes = require('./routes/status-routes.js')
 
 const cors = require('cors')
 const passport = require('passport')
@@ -10,7 +10,7 @@ const passportConfig = require('./config/passport-config.js')
 const session = require('express-session')
 const app = express()
 const { errorHandler } = require('./middlewares/error-handler')
-const { findUserById } = require('./services/user')
+const { findUserById } = require('./services/user-services.js')
 
 passport.use(
   new GitHubStrategy(

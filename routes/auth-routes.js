@@ -1,6 +1,6 @@
 const express = require('express')
 const authRouter = express.Router()
-const authController = require('../controllers/auth.js')
+const authController = require('../controllers/auth-controller.js')
 
 // Middleware for logging request and response
 authRouter.use((req, res, next) => {

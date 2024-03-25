@@ -1,6 +1,6 @@
 require('dotenv').config()
-const { User } = require('../models/user')
-const { findUserById, createUser } = require('../services/user')
+const { User } = require('../models/user-model')
+const { findUserById, createUser } = require('../services/user-services')
 const validateApiKey = require('../middlewares/validate-api-key')
 const validateUser = require('../middlewares/validate-user')
 const validateUserUpdate = require('../middlewares/validate-user-update')
@@ -11,16 +11,16 @@ exports.createUser = [
   validateApiKey,
   validateUser,
   async (req, res, next) => {
-    // #swagger.requestBody = {
-    //   required: true,
-    //   content: {
-    //     "application/json": {
-    //       schema: {
-    //         $ref: '#/components/schemas/User'
-    //       }
-    //     }
-    //   }
-    // }
+    /* #swagger.requestBody = {
+       required: true,
+       content: {
+         "application/json": {
+           schema: {
+             $ref: '#/components/schemas/User'
+           }
+         }
+       }
+     } */
     // #swagger.responses[200] = { description: 'Success' }
     // #swagger.responses[400] = { description: 'Bad request: Content can not be empty!' }
     // #swagger.responses[500] = { description: 'Internal server error' }
@@ -41,7 +41,7 @@ exports.createUser = [
     })
 
     try {
-      const data = await createUser(userData)
+      const data = await createUser(user)
       res.json(data)
     } catch (err) {
       next(err)

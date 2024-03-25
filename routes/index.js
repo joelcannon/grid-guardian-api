@@ -2,8 +2,8 @@ const express = require('express')
 const router = express.Router()
 const apiRouter = express.Router()
 
-const userRoutes = require('./user.js')
-const authRoutes = require('./auth.js')
+const userRoutes = require('./user-routes.js')
+const authRoutes = require('./auth-routes.js')
 const swaggerUi = require('swagger-ui-express')
 const swaggerDocument = require('../docs/openapi.json')
 

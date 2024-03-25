@@ -1,5 +1,5 @@
 const userRouter = require('express').Router()
-const userController = require('../controllers/user.js')
+const userController = require('../controllers/user-controller.js')
 const { isAuthenticated } = require('../middlewares/is-authenticated.js')
 
 userRouter.get(
@@ -12,12 +12,12 @@ userRouter.get(
 
 userRouter.get(
   '/:id',
-  // #swagger.parameters['id'] = {
-  //   in: 'path',
-  //   description: 'ID of the user to retrieve',
-  //   required: true,
-  //   type: 'string'
-  // }
+  /* #swagger.parameters['id'] = {
+     in: 'path',
+     description: 'ID of the user to retrieve',
+     required: true,
+     type: 'string'
+   } */
   // #swagger.summary = 'get a single User by id'
   // #swagger.tags = ['users']
   userController.getUserById,
@@ -25,43 +25,43 @@ userRouter.get(
 
 userRouter.post(
   '/',
-  // #swagger.parameters['newUser'] = {
-  //   in: 'body',
-  //   description: 'Information for the new user.',
-  //   required: true,
-  //   schema: {
-  //     type: 'object',
-  //     properties: {
-  //       username: { type: 'string', example: 'joelcannon' },
-  //       email: { type: 'string', example: 'joelcannon@mac.com' },
-  //       password: { type: 'string', example: 'password' },
-  //       firstName: { type: 'string', example: 'Joel' },
-  //       lastName: { type: 'string', example: 'Cannon' },
-  //       role: { type: 'string', example: 'Admin' },
-  //       phone: { type: 'string', example: '+15412440897' }
-  //     }
-  //   }
-  // },
-  // #swagger.responses[201] = {
-  //   description: 'User created successfully',
-  //   schema: {
-  //     $ref: '#/definitions/User'
-  //   },
-  //   examples: {
-  //     'application/json': {
-  //       id: '5f8f8c3d3b9f40a361eb7790',
-  //       // other fields...
-  //     }
-  //   },
-  //   links: {
-  //     GetUserById: {
-  //       operationId: 'getUserById',
-  //       parameters: {
-  //         id: '$response.body#/id'
-  //       }
-  //     }
-  //   }
-  // },
+  /* #swagger.parameters['newUser'] = {
+    in: 'body',
+    description: 'Information for the new user.',
+    required: true,
+    schema: {
+      type: 'object',
+      properties: {
+        username: { type: 'string', example: 'joelcannon' },
+        email: { type: 'string', example: 'joelcannon@mac.com' },
+        password: { type: 'string', example: 'password' },
+        firstName: { type: 'string', example: 'Joel' },
+        lastName: { type: 'string', example: 'Cannon' },
+        role: { type: 'string', example: 'Admin' },
+        phone: { type: 'string', example: '+15412440897' }
+      }
+    }
+   }, */
+  /* #swagger.responses[201] = {
+    description: 'User created successfully',
+    schema: {
+      $ref: '#/definitions/User'
+    },
+    examples: {
+      'application/json': {
+        id: '5f8f8c3d3b9f40a361eb7790',
+        // other fields...
+      }
+    },
+    links: {
+      GetUserById: {
+        operationId: 'getUserById',
+        parameters: {
+          id: '$response.body#/id'
+        }
+      }
+    }
+  }, */
   // #swagger.summary = 'Add a new User',
   // #swagger.tags = ['users'],
   isAuthenticated,

@@ -1,5 +1,5 @@
 // middlewares/validateUser.js
-const { userJoiSchema } = require('../models/user')
+const { userJoiSchema } = require('../models/user-model')
 
 const validateUser = (req, res, next) => {
   const { error } = userJoiSchema.validate(req.body)
