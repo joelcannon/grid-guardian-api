@@ -11,14 +11,14 @@ const doc = {
     // Used in place of 'schemes', 'basePath', etc.
     // Look into documentation on their GitHub repo's.
     {
-      // The first url set will be your default.
-      url: 'http://localhost:8080',
-      description: 'local dev URL',
-    },
-    {
-      // This is another option that can be selected to connect through.
+      // The first url set will be your default - deployment.
       url: 'https://cse341-w4-h46g.onrender.com',
       description: 'production Render URL',
+    },
+    {
+      // Another option that can be selected to connect through - development.
+      url: 'http://localhost:8080',
+      description: 'local dev URL',
     },
   ],
   components: {
@@ -54,7 +54,7 @@ const doc = {
 const outputFile = './docs/openapi.json'
 const endpointsFiles = [
   './routes/index.js',
-  './routes/status.js',
+  './routes/status-routes.js',
   './models/*.js',
 ] // Include all files in these models
 

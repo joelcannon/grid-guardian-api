@@ -63,6 +63,7 @@ passport.deserializeUser((id, done) => {
 
 app
   .use(express.json())
+  .use(express.urlencoded({ extended: true }))
   .use(
     session({
       secret: 'secret',
@@ -75,7 +76,6 @@ app
   .use(
     cors({ methods: ['GET', 'POST', 'DELETE', 'PUT', 'PATCH'], origin: '*' }),
   )
-  .use(express.urlencoded({ extended: true }))
   .use('/', routes)
   .use('/', statusRoutes)
   .use(errorHandler)

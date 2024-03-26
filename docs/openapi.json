@@ -7,12 +7,12 @@
   },
   "servers": [
     {
-      "url": "http://localhost:8080",
-      "description": "local dev URL"
-    },
-    {
       "url": "https://cse341-w4-h46g.onrender.com",
       "description": "production Render URL"
+    },
+    {
+      "url": "http://localhost:8080",
+      "description": "local dev URL"
     }
   ],
   "paths": {
@@ -25,7 +25,7 @@
         "description": "use this as the API key = Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N",
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success JwC"
           },
           "500": {
             "description": "Internal server error"
@@ -40,7 +40,17 @@
         "description": "",
         "responses": {
           "401": {
-            "description": "Unauthorized"
+            "description": "Authentication required"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
           }
         }
       },
@@ -55,7 +65,7 @@
             "description": "Success: Users were deleted successfully!"
           },
           "401": {
-            "description": "Unauthorized"
+            "description": "Authentication required"
           },
           "500": {
             "description": "Internal server error"
@@ -112,19 +122,43 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Success: User was updated successfully. JWC",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Bad request: Data to update can not be empty!"
           },
           "401": {
-            "description": "Unauthorized"
+            "description": "Authentication required"
           },
           "404": {
-            "description": "Not Found"
+            "description": "Not found: Cannot update User with id. Maybe User was not found!"
+          },
+          "500": {
+            "description": "Internal server error"
           }
         },
-        "requestBody": {}
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        }
       },
       "delete": {
         "tags": [
@@ -148,7 +182,7 @@
             "description": "Success: User was deleted successfully!"
           },
           "401": {
-            "description": "Unauthorized"
+            "description": "Authentication required"
           },
           "404": {
             "description": "Not found: Cannot delete User with id. Maybe User was not found!"
@@ -179,16 +213,31 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Success: User active status was toggled successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Bad request: Data to update can not be empty!"
           },
           "401": {
-            "description": "Unauthorized"
+            "description": "Authentication required"
           },
           "404": {
-            "description": "Not Found"
+            "description": "Not found: Cannot toggle User active status with id. Maybe User was not found!"
+          },
+          "500": {
+            "description": "Internal server error"
           }
         }
       }

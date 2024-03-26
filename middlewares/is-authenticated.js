@@ -3,6 +3,7 @@ const isAuthenticated = (req, res, next) => {
     next()
   } else {
     return res.status(401).json({ message: 'Authentication required' })
+    // #swagger.responses[401] = { description: 'Authentication required' }
   }
 }
 
