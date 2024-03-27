@@ -1,9 +1,19 @@
-{
-   "username": "joelcannon",
-   "email": "joelcannon@mac.com",
-   "password": "password",
-   "firstName": "Joel",
-   "lastName": "Cannon",
-   "role": "Super Admin",
-   "phone": "+15412440897"
-}
+[
+   {
+      "username": "joelcannon",
+      "email": "joelcannon@mac.com",
+      "phone": "+15412440897",
+      "role": "Super Admin"
+   },
+   {
+      "username": "jcannon",
+      "email": "joelcannon@gmail.com",
+      "phone": "+15412440898",
+   },
+   {
+      "username": "shawnie",
+      "email": "shawniecannon@gmail.com",
+      "phone": "+15412440896",
+      "role": "Admin"
+   },
+]

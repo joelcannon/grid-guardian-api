@@ -7,16 +7,16 @@
   },
   "servers": [
     {
-      "url": "http://localhost:8080",
-      "description": "localhost:8080"
+      "url": "https://cse341-w4-h46g.onrender.com",
+      "description": "production Render URL"
     },
     {
-      "url": "https://grid-guardian-api.onrender.com/",
-      "description": "Render URL"
+      "url": "http://localhost:8080",
+      "description": "local dev URL"
     }
   ],
   "paths": {
-    "/users/": {
+    "/api/users/": {
       "get": {
         "tags": [
           "users"
@@ -25,7 +25,7 @@
         "description": "use this as the API key = Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N",
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success JWC"
           },
           "500": {
             "description": "Internal server error"
@@ -40,16 +40,40 @@
         "description": "",
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success: User was updated successfully. JWC",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
           },
           "400": {
-            "description": "Bad request: Content can not be empty!"
+            "description": "Bad request: Data to update can not be empty!"
           },
-          "500": {
-            "description": "Internal server error"
+          "401": {
+            "description": "Authentication required"
+          },
+          "404": {
+            "description": "Not found: Cannot update User with id. Maybe User was not found!"
           }
         },
-        "requestBody": {}
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        }
       },
       "delete": {
         "tags": [
@@ -61,13 +85,16 @@
           "204": {
             "description": "Success: Users were deleted successfully!"
           },
+          "401": {
+            "description": "Authentication required"
+          },
           "500": {
             "description": "Internal server error"
           }
         }
       }
     },
-    "/users/{id}": {
+    "/api/users/{id}": {
       "get": {
         "tags": [
           "users"
@@ -82,7 +109,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "User ID"
+            "description": "ID of the user to retrieve"
           }
         ],
         "responses": {
@@ -116,16 +143,43 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Success: User was updated successfully. JWC",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Bad request: Data to update can not be empty!"
+          },
+          "401": {
+            "description": "Authentication required"
           },
           "404": {
-            "description": "Not Found"
+            "description": "Not found: Cannot update User with id. Maybe User was not found!"
+          },
+          "500": {
+            "description": "Internal server error"
           }
         },
-        "requestBody": {}
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        }
       },
       "delete": {
         "tags": [
@@ -148,6 +202,9 @@
           "204": {
             "description": "Success: User was deleted successfully!"
           },
+          "401": {
+            "description": "Authentication required"
+          },
           "404": {
             "description": "Not found: Cannot delete User with id. Maybe User was not found!"
           },
@@ -157,7 +214,7 @@
         }
       }
     },
-    "/users/{id}/toggleActiveStatus": {
+    "/api/users/{id}/toggleActiveStatus": {
       "patch": {
         "tags": [
           "users"
@@ -177,30 +234,191 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Success: User active status was toggled successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Bad request: Data to update can not be empty!"
+          },
+          "401": {
+            "description": "Authentication required"
           },
           "404": {
-            "description": "Not Found"
+            "description": "Not found: Cannot toggle User active status with id. Maybe User was not found!"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/api/auth/login": {
+      "get": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "login in using GitHub",
+        "description": "the /api/auth/login route should be accessed directly in the browser, not via AJAX.",
+        "responses": {
+          "200": {
+            "description": "Redirects to GitHub for authentication"
+          }
+        }
+      }
+    },
+    "/api/auth/logout": {
+      "get": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "logout",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Logs out the user and redirects to the homepage"
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "status"
+        ],
+        "summary": "report login status",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
     }
   },
   "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "example": "object"
+          },
+          "required": {
+            "type": "array",
+            "example": [
+              "username",
+              "email",
+              "phone"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "properties": {
+            "type": "object",
+            "properties": {
+              "username": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "example": "string"
+                  }
+                }
+              },
+              "email": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "example": "string"
+                  }
+                }
+              },
+              "phone": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "example": "string"
+                  }
+                }
+              },
+              "role": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "example": "string"
+                  }
+                }
+              },
+              "isActive": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "example": "boolean"
+                  }
+                }
+              },
+              "organization": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "example": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "xml": {
+          "name": "User"
+        }
+      }
+    },
     "securitySchemes": {
       "ApiKeyAuth": {
         "type": "apiKey",
         "in": "header",
         "name": "apiKey"
+      },
+      "OAuth2": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://github.com/login/oauth/authorize",
+            "tokenUrl": "https://github.com/login/oauth/access_token",
+            "scopes": {
+              "read:user": "Read user data"
+            }
+          }
+        }
       }
     }
   },
   "security": [
     {
       "ApiKeyAuth": []
+    },
+    {
+      "OAuth2": [
+        "read:user"
+      ]
     }
   ]
 }

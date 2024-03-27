@@ -1,14 +1,14 @@
 // middlewares/validateUserUpdate.js
 const Joi = require('joi')
-const { userJoiSchema } = require('../models/user')
+const { userJoiSchema } = require('../models/user-model')
 
 const userUpdateJoiSchema = Joi.object({
   username: userJoiSchema.extract('username').optional(),
   email: userJoiSchema.extract('email').optional(),
-  password: userJoiSchema.extract('password').optional(),
+  // password: userJoiSchema.extract('password').optional(),
   phone: userJoiSchema.extract('phone').optional(),
-  firstName: userJoiSchema.extract('firstName').optional(),
-  lastName: userJoiSchema.extract('lastName').optional(),
+  // firstName: userJoiSchema.extract('firstName').optional(),
+  // lastName: userJoiSchema.extract('lastName').optional(),
   role: userJoiSchema.extract('role').optional(),
   isActive: userJoiSchema.extract('isActive').optional(),
   organization: userJoiSchema.extract('organization').optional(),
