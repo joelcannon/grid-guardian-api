@@ -27,6 +27,23 @@ userRouter.post(
   '/',
   // #swagger.summary = 'Add a new User',
   // #swagger.tags = ['users'],
+  /* #swagger.requestBody = {
+      required: true,
+      content: {
+        "application/json": {
+          schema: {
+            $ref: '#/components/schemas/User'
+          }
+        }
+      }
+    } */
+  /* #swagger.responses[200] = {
+      description: 'Success: User was updated successfully. JWC',
+      schema: { $ref: '#/components/schemas/User' }
+    } */
+  // #swagger.responses[400] = { description: 'Bad request: Data to update can not be empty!' }
+  // #swagger.responses[404] = { description: 'Not found: Cannot update User with id. Maybe User was not found!' }
+
   isAuthenticated,
   (req, res, next) => {
     console.log(req.body)

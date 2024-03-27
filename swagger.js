@@ -22,6 +22,20 @@ const doc = {
     },
   ],
   components: {
+    schemas: {
+      User: {
+        type: 'object',
+        required: ['username', 'email', 'phone'],
+        properties: {
+          username: { type: 'string' },
+          email: { type: 'string' },
+          phone: { type: 'string' },
+          role: { type: 'string' },
+          isActive: { type: 'boolean' },
+          organization: { type: 'string' },
+        },
+      },
+    },
     securitySchemes: {
       ApiKeyAuth: {
         // name the security scheme

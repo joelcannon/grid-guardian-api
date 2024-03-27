@@ -11,25 +11,7 @@ exports.createUser = [
   validateApiKey,
   validateUser,
   async (req, res, next) => {
-    // #swagger.parameters['id'] = { description: 'User ID' }
-    /* #swagger.requestBody = {
-      required: true,
-      content: {
-        "application/json": {
-          schema: {
-            $ref: '#/components/schemas/User'
-          }
-        }
-      }
-    } */
-    /* #swagger.responses[200] = {
-      description: 'Success: User was updated successfully. JWC',
-      schema: { $ref: '#/components/schemas/User' }
-    } */
-    // #swagger.responses[400] = { description: 'Bad request: Data to update can not be empty!' }
-    // #swagger.responses[404] = { description: 'Not found: Cannot update User with id. Maybe User was not found!' }
     // #swagger.responses[500] = { description: 'Internal server error' }
-
     if (!req.body.username) {
       return res.status(400).json({ message: 'Content can not be empty!' })
     }
@@ -92,9 +74,8 @@ exports.getUserById = [
 exports.updateUserById = [
   validateApiKey,
   validateUserUpdate,
-  async (req, res, next) => {
-    // #swagger.parameters['id'] = { description: 'User ID' }
-    /* #swagger.requestBody = {
+  // #swagger.parameters['id'] = { description: 'User ID' }
+  /* #swagger.requestBody = {
       required: true,
       content: {
         "application/json": {
@@ -104,13 +85,14 @@ exports.updateUserById = [
         }
       }
     } */
-    /* #swagger.responses[200] = {
+  /* #swagger.responses[200] = {
       description: 'Success: User was updated successfully. JWC',
       schema: { $ref: '#/components/schemas/User' }
     } */
-    // #swagger.responses[400] = { description: 'Bad request: Data to update can not be empty!' }
-    // #swagger.responses[404] = { description: 'Not found: Cannot update User with id. Maybe User was not found!' }
-    // #swagger.responses[500] = { description: 'Internal server error' }
+  // #swagger.responses[400] = { description: 'Bad request: Data to update can not be empty!' }
+  // #swagger.responses[404] = { description: 'Not found: Cannot update User with id. Maybe User was not found!' }
+  // #swagger.responses[500] = { description: 'Internal server error' }
+  async (req, res, next) => {
     if (!req.body) {
       return res
         .status(400)
