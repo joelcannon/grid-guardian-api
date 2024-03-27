@@ -6,7 +6,7 @@ const userUpdateJoiSchema = Joi.object({
   username: userJoiSchema.extract('username').optional(),
   email: userJoiSchema.extract('email').optional(),
   // password: userJoiSchema.extract('password').optional(),
-  // phone: userJoiSchema.extract('phone').optional(),
+  phone: userJoiSchema.extract('phone').optional(),
   // firstName: userJoiSchema.extract('firstName').optional(),
   // lastName: userJoiSchema.extract('lastName').optional(),
   role: userJoiSchema.extract('role').optional(),

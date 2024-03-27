@@ -19,6 +19,7 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 {
    "username": "joel",
    "email": "joelcannon@mac.co",
+   "phone": "+15412440898",
    "role": "Admin"
 }
 ###
@@ -29,6 +30,7 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 {
    "username": "joelcannon",
    "email": "joelcannon@gmail.com",
+      "phone": "+15412440896",
    "role": "Operator"
 }
 
@@ -70,7 +72,8 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 {
    "username": "joel",
    "email": "joelcannon@mac.co",
-   "role": "Super Admin"
+      "phone": "+15412440898",
+"role": "Super Admin"
 }
 
 ###
@@ -81,7 +84,8 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 {
    "username": "joelcannon",
    "email": "joelcannon@gmail.com",
-   "role": "Operator"
+      "phone": "+15412440896",
+"role": "Operator"
 }
 ###
 DELETE https://cse341-w4-h46g.onrender.com//api/users/65f68a1a683dbbdb7701378f

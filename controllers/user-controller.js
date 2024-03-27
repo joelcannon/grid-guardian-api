@@ -37,6 +37,7 @@ exports.createUser = [
     const user = new User({
       username: req.body.username,
       email: req.body.email,
+      phone: req.body.phone,
       role: req.body.role,
       isActive: req.body.isActive,
       organization: req.body.organization,

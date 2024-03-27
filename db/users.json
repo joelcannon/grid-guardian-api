@@ -1,9 +1,6 @@
 {
    "username": "joelcannon",
    "email": "joelcannon@mac.com",
-   // "password": "password",
-   // "firstName": "Joel",
-   // "lastName": "Cannon",
-   "role": "Super Admin",
-   // "phone": "+15412440897"
+   "phone": "+15412440897",
+   "role": "Super Admin"
 }
