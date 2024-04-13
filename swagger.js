@@ -35,6 +35,27 @@ const doc = {
           organization: { type: 'string' },
         },
       },
+      Organization: {
+        type: 'object',
+        properties: {
+          name: { type: 'string' },
+          email: { type: 'string' },
+          phone: { type: 'string' },
+          address: { type: 'string' },
+          website: { type: 'string' },
+          description: { type: 'string' },
+          isActive: { type: 'boolean' },
+          members: {
+            type: 'array',
+            items: {
+              $ref: '#/definitions/User',
+            },
+          },
+          owner: {
+            $ref: '#/definitions/User',
+          },
+        },
+      },
     },
     securitySchemes: {
       ApiKeyAuth: {

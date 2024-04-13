@@ -8,6 +8,6 @@ const db = {}
 db.mongoose = mongoose
 db.url = dbConfig.url
 db.User = require('./user-model.js')
-db.Organization = require('./organization-model.js')(mongoose) // #todo: update to be the same as User.
+db.Organization = require('./organization-model.js').OrganizationModel
 
 module.exports = db

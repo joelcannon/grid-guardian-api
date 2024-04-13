@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const isPhoneNumberValid = require('../utils/phone-validator')
 const Joi = require('joi')
+const { ROLES, ROLE_PERMISSIONS } = require('./roles-model')
 
 const Roles = {
   VIEWER: 'Viewer',

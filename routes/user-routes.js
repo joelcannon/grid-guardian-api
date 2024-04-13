@@ -1,6 +1,6 @@
 const userRouter = require('express').Router()
 const userController = require('../controllers/user-controller.js')
-const { isAuthenticated } = require('../middlewares/is-authenticated.js')
+const isAuthenticated = require('../middlewares/is-authenticated.js')
 
 userRouter.get(
   '/',
